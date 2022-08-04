@@ -12,12 +12,18 @@ export const Section = styled.section`
     z-index: 1;
   `
 export const Div = styled.div`
-    width:100%;
     display:flex;
     justify-content:center;
     flex-direction:column;
     align-items:center;
     width:25%;
+
+    @media(max-width: 950px) {
+        width:35%;
+    }
+    @media(max-width: 600px) {
+        width:90%;
+    }
   `
 export const DivTop = styled.div`
     display:flex;
@@ -33,6 +39,13 @@ export const Title = styled.h1`
     font-weight: 700;
     font-size: 0.92vw;
     color: var(--gray-0);
+
+    @media(max-width: 950px) {
+        font-size: 1.8vw;
+    }
+    @media(max-width: 600px) {
+        font-size: 3.5vw;
+    }
   `
 export const ButtonExit = styled.button`
     display:flex;
@@ -40,12 +53,21 @@ export const ButtonExit = styled.button`
     align-items:center;
     width: 2vw;
     height: 3vh;
+
     color:var(--gray-1);
     background-color:var(--transparent);
     border:none;
 
     &:hover {
         color:var(--negative); 
+    }
+
+    @media(max-width: 950px) {
+        width: 3vw;
+    }
+    @media(max-width: 600px) {
+        width: 7vw;
+     
     }
 `
 export const Form = styled.form`
@@ -57,6 +79,13 @@ export const Form = styled.form`
     background: var(--gray-3);
     box-shadow: 0px 4px 40px -10px var(--shadow);
     border-radius: 0 0 0.3vw 0.3vw; 
+
+    @media(max-width: 950px) {
+        gap: 2.5vw;
+    }
+    @media(max-width: 600px) {
+        gap: 5vw;
+    }
   `
 export const Input = styled.input`
     box-sizing: border-box;
@@ -72,12 +101,27 @@ export const Input = styled.input`
     font-weight: 400;
     font-size: 1.05vw;
     color: var(--gray-0);
+
+    @media(max-width: 950px) {
+        font-size: 2vw;
+    }
+    @media(max-width: 600px) {
+        height: 6vh;
+        font-size: 4.5vw;
+    }
 `
 export const Label = styled.label`
     height: 0;
     font-weight: 400;
     font-size: 0.8vw;
     color: var(--gray-0);
+
+    @media(max-width: 950px) {
+        font-size: 1.6vw;
+    }
+    @media(max-width: 600px) {
+        font-size: 3vw;
+    }
 `
 export const DivButton = styled.div`
     display:flex;
@@ -103,6 +147,17 @@ export const ButtonPink = styled.button`
             background: var(--color-primary);
             border: 0.1vw solid var(--color-primary);  
     }
+
+    @media(max-width: 950px) {
+        font-weight: 600;
+        font-size: 2vw;
+        border-radius: 0.3vw;
+    }
+    @media(max-width: 600px) {
+        font-weight: 600;
+        font-size: 4vw;
+        border-radius: 1vw;
+    }
 `
 export const ButtonGrey = styled.button`
     box-sizing: border-box;
@@ -123,6 +178,17 @@ export const ButtonGrey = styled.button`
             background: var(--gray-2);
             border: 0.1vw solid var(--gray-2);  
     }
+
+    @media(max-width: 950px) {
+        font-weight: 600;
+        font-size: 2vw;
+        border-radius: 0.3vw;
+    }
+    @media(max-width: 600px) {
+        font-weight: 600;
+        font-size: 4vw;
+        border-radius: 1vw;
+    }
 `
 export const Select = styled.select`
         box-sizing: border-box;
@@ -141,5 +207,13 @@ export const Select = styled.select`
 
         &::placeholder {
             color: var(--gray-1);
+        }
+
+        @media(max-width: 950px) {
+            font-size: 2vw;
+        }
+        @media(max-width: 600px) {
+            height: 6vh;
+            font-size: 4.5vw;
         }
 `

@@ -1,5 +1,6 @@
 import Header from "./Header"
 // import ModalEdit from "./Modal/ModalEdit"
+// import ModalRegister from "./Modal/ModalRegister"
 import List from "./List"
 // import Login from "../Login"
 // import Register from "../Register"
@@ -14,6 +15,7 @@ function Dashboard() {
         <Header />
         <List />
         {/* <ModalEdit /> */}
+        {/* <ModalRegister /> */}
         </>
     )
 }
