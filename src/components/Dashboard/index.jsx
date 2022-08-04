@@ -1,16 +1,18 @@
-// import Header from "./Header"
+import Header from "./Header"
 // import ModalEdit from "./Modal/ModalEdit"
-// import List from "./List"
-import Login from "../Login"
+import List from "./List"
+// import Login from "../Login"
+// import Register from "../Register"
 import "./style"
 
 function Dashboard() {
 
     return (
         <>
-        <Login />
-        {/* <Header /> */}
-        {/* <List /> */}
+        {/* <Register /> */}
+        {/* <Login /> */}
+        <Header />
+        <List />
         {/* <ModalEdit /> */}
         </>
     )
