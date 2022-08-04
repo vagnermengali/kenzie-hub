@@ -5,13 +5,14 @@ export const Section = styled.section`
     justify-content:center;
     align-items:center;
     width:100%;
-    height:100%;
+    height:min-content;
 `
 export const Div = styled.div`
         width:100%;
         height:100%;
         display:flex;
         justify-content: space-between;
+        margin: 2vh 0
 `
 export const Img = styled.img`
     width: 40%;
@@ -31,9 +32,16 @@ export const ButtonBlack = styled.button`
     text-align: center;
     color: var(--gray-0);
 
-    &:hover {
-                background: var(--gray-1);
-                border: 0.1vw solid var(--gray-1);  
+        &:hover {
+                background: var(--gray-2);
+                border: 0.1vw solid var(--gray-2);  
+        }
+        @media(max-width: 950px) {
+                height: 6vh;
+                font-size: 2vw;
+        }
+        @media(max-width: 600px) {
+                font-size: 3vw;
         }
 `
 export const DivContainer = styled.div`
@@ -42,7 +50,18 @@ export const DivContainer = styled.div`
     align-items:center;
     width: 25%;
     height: 85%;
+    margin:3.5vw 0;
     gap: 2vw;
+        @media(max-width: 950px) {
+                width:60%;
+                gap: 10vw;
+                margin:10.5vw 0;
+        }
+        @media(max-width: 600px) {
+                width:90%;
+                gap: 10vw;
+                margin:10.5vw 0;
+        }
 `
 export const Title = styled.h1`
         font-weight: 700;
@@ -50,6 +69,15 @@ export const Title = styled.h1`
         line-height: 2vw;
         color: var(--gray-0);
         text-align:center;
+                
+        @media(max-width: 950px) {
+                font-size: 2.5vw;
+                line-height: 3.5vw;
+        }
+        @media(max-width: 600px) {
+                font-size: 5vw;
+                line-height: 7vw;
+        }
   `
 export const Form = styled.form`
         width:100%;
@@ -60,6 +88,13 @@ export const Form = styled.form`
         background: var(--gray-3);
         box-shadow: 0px 4px 40px -10px var(--shadow);
         border-radius: 0.3vw; 
+                
+        @media(max-width: 950px) {
+                gap: 2.5vw;
+        }
+        @media(max-width: 600px) {
+                gap: 6.4vw;
+        }
   `
 export const Input = styled.input`
         box-sizing: border-box;
@@ -79,12 +114,30 @@ export const Input = styled.input`
         &::placeholder {
             color: var(--gray-1);
         }
+                
+        @media(max-width: 950px) {
+                border-radius: 0.5vw;
+                font-size: 2vw;
+                height: 8vh;
+        }
+        @media(max-width: 600px) {
+                border-radius: 1.5vw;
+                font-size: 4vw;
+                height: 7vh;
+        }
 `
 export const Label = styled.label`
         height: 0;
         font-weight: 400;
         font-size: 0.8vw;
         color: var(--gray-0);
+                
+        @media(max-width: 950px) {
+                font-size:1.5vw;
+        }
+        @media(max-width: 600px) {
+                font-size: 3vw;
+        }
 `
 export const ParagraphQuestion = styled.p`
         width:100%;
@@ -93,6 +146,14 @@ export const ParagraphQuestion = styled.p`
         line-height: 1.1vw;
         color: var(--gray-1);
         text-align:center;
+        @media(max-width: 950px) {
+                font-size: 1.5vw;
+                line-height: 2vw;
+        }
+        @media(max-width: 600px) {
+                font-size: 3vw;
+                line-height: 4vw;
+        }
 `
 export const Select = styled.select`
         box-sizing: border-box;
@@ -111,6 +172,16 @@ export const Select = styled.select`
 
         &::placeholder {
             color: var(--gray-1);
+        }
+        @media(max-width: 950px) {
+                border-radius: 0.5vw;
+                font-size: 2vw;
+                height: 8vh;
+        }
+        @media(max-width: 600px) {
+                border-radius: 1.5vw;
+                font-size: 4vw;
+                height: 7vh;
         }
 `
 export const ButtonNegative = styled.button`
@@ -131,5 +202,17 @@ export const ButtonNegative = styled.button`
         &:hover {
                 background: var(--color-primary-focus);
                 border: 0.1vw solid var(--color-primary-focus);  
+        }
+         
+        @media(max-width: 950px) {
+                height: 8vh;
+                font-weight: 600;
+                font-size: 2vw;
+                border-radius: 0.5vw;
+        }
+        @media(max-width: 600px) {
+                font-weight: 600;
+                font-size: 4vw;
+                border-radius: 1vw;
         }
 `

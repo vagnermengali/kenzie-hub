@@ -18,6 +18,8 @@ function List() {
                     <Card />
                     <Card />
                     <Card />
+                    <Card />
+                    <Card />
                 </Ul>
             </DivContentUl>
         </Main>
