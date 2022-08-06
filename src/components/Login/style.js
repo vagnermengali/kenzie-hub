@@ -5,8 +5,8 @@ export const Section = styled.section`
     justify-content:center;
     align-items:center;
     width:100%;
-    height:100%;
-  `
+    height:100vh;
+`
 export const Img = styled.img`
         width: 40%;
 `
@@ -16,7 +16,7 @@ export const Div = styled.div`
         flex-direction:column;
         align-items:center;
         width:25%;
-
+        
         @media(max-width: 950px) {
                 width:60%;
         }
@@ -45,20 +45,61 @@ export const Form = styled.form`
         display: flex;
         flex-direction: column;
         padding: 11% 5.9% 0 5.9%;
-        gap: 1.4vw;
+        gap: 1.8vw;
         background: var(--gray-3);
         box-shadow: 0px 4px 40px -10px var(--shadow);
         border-radius: 0.3vw 0.3vw 0 0;
         margin-top:10.2%;
         
+        div{
+                display:flex;
+                align-items:center;
+                width:100%;
+                border-radius: 4px;
+                background-color: var(--gray-2);
+        }
+        div button{
+                display:flex;
+                align-items:center;
+                font-size:1vw;
+                margin-right: 4%;
+                cursor:pointer;
+                color: var(--gray-1);
+                background-color:var(--transparent); 
+                border:none;
+
+        }
         @media(max-width: 950px) {
                 gap: 4vw;
+
+                div {
+                        border-radius: 0.5vw;
+                        font-size: 2vw;
+                        height: 8vh;
+                }
+                div button{
+                        border-radius: 0.5vw;
+                        font-size: 2vw;
+                        height: 8vh;     
+                }
         }
         @media(max-width: 600px) {
                 gap: 6.4vw;
-        }
+                
+                div {
+                        border-radius: 1.5vw;
+                        font-size: 4vw;
+                        height: 7.3vh;
+                }
+                div button{
+                        border-radius: 1.5vw;
+                        font-size: 4vw;
+                        height: 7.3vh;
+                }
+}
 `
 export const Input = styled.input`
+        outline:none;
         box-sizing: border-box;
         display: flex;
         flex-direction: row;
@@ -72,7 +113,7 @@ export const Input = styled.input`
         font-weight: 400;
         font-size: 1.05vw;
         color: var(--gray-0);
-        
+
         @media(max-width: 950px) {
                 border-radius: 0.5vw;
                 font-size: 2vw;
@@ -85,16 +126,31 @@ export const Input = styled.input`
         }
 `
 export const Label = styled.label`
+        display:flex;
+        flex-direction:column;
+        justify-content: space-between;
         height: 0;
         font-weight: 400;
         font-size: 0.8vw;
         color: var(--gray-0);
         
+        span{
+                font-weight: 400;
+                font-size: 0.8vw;
+                color: var(--negative);
+        }
+
         @media(max-width: 950px) {
                 font-size:1.5vw;
+                span{
+                font-size:1.5vw;;
+        }
         }
         @media(max-width: 600px) {
                 font-size: 3vw;
+                span{
+                font-size: 3vw;;
+        }
         }
 `
 export const ButtonPink = styled.button`

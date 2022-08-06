@@ -1,11 +1,17 @@
-// import Login from "./components/Login"
-// import Register from "./components/Register";
-import Dashboard from "./components/Dashboard"
+import Authenticator from "./routes";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
+
   return (
-      <Dashboard/>
-  );
+    <>
+        <Authenticator />
+        <ToastContainer 
+        toastStyle={{ backgroundColor: "#343B41", color: "white" }}autoClose={1500}/>
+      
+    </>
+  )
 }
 
 export default App;

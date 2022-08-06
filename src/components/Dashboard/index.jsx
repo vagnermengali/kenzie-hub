@@ -1,23 +1,31 @@
+import { useNavigate } from "react-router-dom"
+import { motion } from "framer-motion"
 import Header from "./Header"
-// import ModalEdit from "./Modal/ModalEdit"
-// import ModalRegister from "./Modal/ModalRegister"
 import List from "./List"
-// import Login from "../Login"
-// import Register from "../Register"
 import "./style"
 
 function Dashboard() {
+    const navigate = useNavigate()
+    const token = JSON.parse(window.localStorage.getItem("authToken"))
+    console.log(token)
+    if(!token) {
+        setTimeout(() => {navigate("/")}, 100)
+    }else {
+        return (
+            <motion.div 
+            initial={{opacity:0}}
+            animate={{opacity:1}}
+            exit={{ opacity:0 }}
+            transition={{ duration: 0.5 }}
+            >
+            <>
+            <Header />
+            <List />
+            </>
+            </motion.div>
+        )
+    }
 
-    return (
-        <>
-        {/* <Register /> */}
-        {/* <Login /> */}
-        <Header />
-        <List />
-        {/* <ModalEdit /> */}
-        {/* <ModalRegister /> */}
-        </>
-    )
 }
 
 export default Dashboard
