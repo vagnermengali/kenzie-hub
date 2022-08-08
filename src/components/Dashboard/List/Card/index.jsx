@@ -4,6 +4,9 @@ import "./style"
 
 function Card() {
 
+
+    
+    
     return (
         <Li>
             <Title>React JS</Title>

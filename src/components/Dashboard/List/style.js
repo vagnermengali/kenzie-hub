@@ -58,8 +58,8 @@ export const ButtonAdd = styled.button`
         color: var(--white);
 
         &:hover {
-                background: var(--gray-1);
-                border: 0.1vw solid var(--gray-1);  
+                background: var(--gray-2);
+                border: 0.1vw solid var(--gray-2);  
         }
 
         @media(max-width: 950px) {
