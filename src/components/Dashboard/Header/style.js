@@ -82,7 +82,7 @@ export const Div = styled.div`
     }
 `
 export const TitleName = styled.h1`
-    width: 88%;
+    width: 100%;
     font-weight: 700;
     font-size: 1.2vw;
     color: var(--gray-0);
@@ -97,10 +97,11 @@ export const TitleName = styled.h1`
     }
 `
 export const Paragraph = styled.p`
-    width: 35%;
+    width: 100%;
     font-weight: 400;
     font-size: 0.8vw;
     color: var(--gray-1);
+    text-align:end;
 
     @media(max-width: 950px) {
         width: 46%;
