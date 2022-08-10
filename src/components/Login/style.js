@@ -9,6 +9,8 @@ export const Section = styled.section`
 `
 export const Img = styled.img`
         width: 40%;
+        animation: fadeInDownBig;
+        animation-duration: 1s;
 `
 export const Div = styled.div`
         display:flex;

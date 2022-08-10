@@ -1,16 +1,15 @@
 import { Section, Div, DivContainer, Form, Title, Input, Label, ButtonNegative, Img, ButtonBlack, ParagraphQuestion, Select} from "./style"
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import * as yup from 'yup';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
-import { useNavigate } from 'react-router-dom'
-import Api from "../../services/api";
 import logo  from "../../assets/logo.svg"
 import { motion } from "framer-motion"
+import { useContext } from "react";
+import { Context } from "../../context/userContext"
 import "./style"
 
 function Register() {
+    const { registerUser, navigate} = useContext(Context);
     const formSchema = yup.object().shape({
         name: yup.string()
         .required("Campo obrigatório")
@@ -50,17 +49,6 @@ function Register() {
         } = useForm({
         resolver: yupResolver(formSchema)
     });
-
-    const registerUser = (data) => {
-       Api.post("/users",data)
-       .then((res) => 
-        res.status === 201? notifySuccess("Usário criado") && setTimeout(() => {navigate("/", { replace: true })}, 4000): null)
-       .catch(() => notifyError("E-mail já existente"))
-    }
-    const notifySuccess = (test) => toast.success(test)
-    const notifyError = (test) => toast.error(test)
-
-    const navigate = useNavigate()
 
     if(registerUser) {
 
