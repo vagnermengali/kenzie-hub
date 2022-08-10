@@ -7,7 +7,7 @@ import "./style"
 function Dashboard() {
     const navigate = useNavigate()
     const token = JSON.parse(window.localStorage.getItem("authToken"))
-    console.log(token)
+
     if(!token) {
         setTimeout(() => {navigate("/")}, 100)
     }else {

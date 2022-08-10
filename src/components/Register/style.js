@@ -16,6 +16,8 @@ export const Div = styled.div`
 `
 export const Img = styled.img`
     width: 40%;
+    animation: fadeInLeftBig;
+    animation-duration: 1s;
 `
 export const ButtonBlack = styled.button`
     display: flex;
@@ -31,6 +33,8 @@ export const ButtonBlack = styled.button`
     font-size: 0.8vw;
     text-align: center;
     color: var(--gray-0);
+    animation: fadeInLeftBig;
+    animation-duration: 1s;
 
         &:hover {
                 background: var(--gray-2);
@@ -39,9 +43,11 @@ export const ButtonBlack = styled.button`
         @media(max-width: 950px) {
                 height: 6vh;
                 font-size: 2vw;
+                border-radius: 0.5vw;
         }
         @media(max-width: 600px) {
                 font-size: 3vw;
+                border-radius: 1.2vw;
         }
 `
 export const DivContainer = styled.div`
