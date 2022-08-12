@@ -31,7 +31,8 @@ function ModalEdit() {
                 <Label htmlFor="">Nome do projeto<span>{errors.title?.message}</span></Label>
                 <Input type="text" value={tech?.title} disabled />
                 <Label htmlFor="">Status<span>{errors.status?.message}</span></Label>
-                <Select {...register("status")} value={tech?.status}>
+                <Select {...register("status")} >
+                    <option></option>
                     <option value="Iniciante">Iniciante</option>
                     <option value="Intermediário">Intermediário</option>
                     <option value="Avançado">Avançado</option>

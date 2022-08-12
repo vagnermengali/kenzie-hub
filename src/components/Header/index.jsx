@@ -17,7 +17,7 @@ function Header() {
                     }}>Sair</Button>
                 </Nav>
                 <Div>
-                    <TitleName>Olá {user.name}</TitleName>
+                    <TitleName>Olá, {user.name}</TitleName>
                     <Paragraph>{user.course_module}</Paragraph>
                 </Div>
             </HeaderContainer >

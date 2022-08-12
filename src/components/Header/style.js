@@ -25,8 +25,6 @@ export const Nav = styled.nav`
 `
 export const Img = styled.img`
     width: 15%;
-    animation: fadeInDownBig;
-    animation-duration: 0.8s;
 
     @media(max-width: 950px) {
         width:20%;
@@ -48,8 +46,6 @@ export const Button = styled.button`
     font-size: 0.8vw;
     text-align: center;
     color: var(--gray-0);
-    animation: fadeInDownBig;
-    animation-duration: 0.8s;
 
     &:hover {
         background: var(--gray-2); 
@@ -90,8 +86,6 @@ export const TitleName = styled.h1`
     font-weight: 700;
     font-size: 1.2vw;
     color: var(--gray-0);
-    animation: fadeInLeftBig;
-    animation-duration: 1s;
 
     @media(max-width: 950px) {
         font-size: 2.7vw;
@@ -108,8 +102,6 @@ export const Paragraph = styled.p`
     font-size: 0.8vw;
     color: var(--gray-1);
     text-align:end;
-    animation: fadeInLeftBig;
-    animation-duration: 1s;
 
     @media(max-width: 950px) {
         width: 46%;
