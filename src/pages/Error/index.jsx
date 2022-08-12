@@ -1,24 +1,15 @@
 import { ContainerSection } from "./style"
-import { useEffect, useRef } from "react";
-import lottie from 'lottie-web';
+import { useContext } from "react";
+import Lottie from 'react-lottie';
+import { Context } from "../../context/userContext";
 
 function Error() {
-    const containerError = useRef(null);
-    useEffect(()=>{
-        lottie.loadAnimation({
-            container:containerError.current,
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: 'https://assets9.lottiefiles.com/packages/lf20_il71njow.json'
-
-        });
-        return () => lottie.destroy()
-    },[])
+    const { animateState, defaultOptionsFive } = useContext(Context)
+ 
     return (
         <ContainerSection>
             <div>
-                <div ref={containerError}></div>
+            <Lottie className="img" options={defaultOptionsFive} isStopped={animateState.isStopped} isPaused={animateState.isPaused}/>
             </div>
         </ContainerSection>
     )
