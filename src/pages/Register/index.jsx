@@ -9,7 +9,7 @@ import { Context } from "../../context/userContext"
 import "./style"
 
 function Register() {
-    const { registerUser, navigate} = useContext(Context);
+    const { registerUser, navigate}  = useContext(Context);
 
       const {
         register,

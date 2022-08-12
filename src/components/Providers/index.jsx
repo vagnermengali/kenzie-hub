@@ -1,9 +1,15 @@
-import ProviderUser from "../../context/userContext"
+import ProviderUserLogin from "../../context/loginContext"
+import ProviderUserRegister from "../../context/registerContext"
+import ProviderUserDashboard from "../../context/dashboardContext"
 
 const Provider = () => {
 
     return (
-    <ProviderUser />
+    <>
+    <ProviderUserLogin />
+    <ProviderUserDashboard />
+    <ProviderUserRegister />
+    </>
     )
     
 }
