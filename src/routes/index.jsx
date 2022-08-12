@@ -1,17 +1,20 @@
-import Register from "../components/Register"
-import Dashboard from "../components/Dashboard";
-import Login from "../components/Login"
-import {Routes, Route, Navigate} from "react-router-dom";
+import Register from "../pages/Register"
+import Dashboard from "../pages/Dashboard";
+import Login from "../pages/Login"
+import Home from "../pages/Home"
+import Error from "../pages/Error"
+import {Routes, Route} from "react-router-dom";
 
 function RouteMain() {
 
     return (
     <Routes>
-        <Route path="*" element={<Navigate replace to="/" />}></Route>
-        <Route path="/" element={<Login />}></Route>
-        <Route path="/home" element={<Dashboard />}></Route>
+        <Route path="/login" element={<Login />}></Route>
+        <Route path="/" element={<Home />}></Route>
+        <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/register" element={<Register />}></Route>
         <Route path="/home/:id" element={<Dashboard />}></Route>
+        <Route path="*" element={<Error replace to="/error"/>}></Route>
     </Routes>
     )
 }
