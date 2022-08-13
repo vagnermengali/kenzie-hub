@@ -65,8 +65,11 @@ const ProviderUser = ({children}) => {
         await Api.post("/users/techs", data, {
             headers: {Authorization: `Bearer ${token}`}
             })
-            .then((res) => res.status === 201 ?  notifyLoginSuccess("Tecnologia criada com sucesso") && setDropdownRegister("none") : null )
-            .catch(() => notifyLoginError("Tecnologia já criada"))
+            .then((res) => res.status === 201 ?  notifyLoginSuccess("Tecnologia criada com sucesso!") && setDropdownRegister("none") : null )
+            .catch(() => {
+                notifyLoginError("Tecnologia já criada!")
+                setDropdownEdit("none")
+            })
     }
 
     const editTech = (data) => {
@@ -77,9 +80,11 @@ const ProviderUser = ({children}) => {
                 setListTech(res.data.techs)
                 setDropdownEdit("none")
                 setLoading(false)
-                notifyLoginSuccess("Tecnologia editada com sucesso")
+                notifyLoginSuccess("Tecnologia editada com sucesso!")
             })
-            .catch(() => notifyLoginError("Tecnologia não cadastrada"))
+            .catch(() => {
+                notifyLoginError("Tecnologia não editada!")
+            })
     }
 
     const deleteTech = () => {
@@ -88,6 +93,7 @@ const ProviderUser = ({children}) => {
             })
             .then(() => {
                 setDropdownEdit("none")
+                notifyLoginSuccess("Tecnologia excluída com sucesso!")
             })
     }
 

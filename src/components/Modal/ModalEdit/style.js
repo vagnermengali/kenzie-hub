@@ -78,18 +78,18 @@ export const Form = styled.form`
     display: flex;
     flex-direction: column;
     padding: 5% 5.9% 9% 5.9%;
-    gap: 1.4vw;
+    gap: 1.8vw;
     background: var(--gray-3);
     box-shadow: 0px 4px 40px -10px var(--shadow);
     border-radius: 0 0 0.3vw 0.3vw; 
 
     @media(max-width: 950px) {
-        gap: 2.5vw;
+        gap: 3vw;
     }
     @media(max-width: 600px) {
-        gap: 5vw;
+        gap: 6.5vw;
     }
-  `
+`
 export const Input = styled.input`
     box-sizing: border-box;
     display: flex;
@@ -114,17 +114,32 @@ export const Input = styled.input`
     }
 `
 export const Label = styled.label`
-    height: 0;
-    font-weight: 400;
-    font-size: 0.8vw;
-    color: var(--gray-0);
+        display:flex;
+        flex-direction:column;
+        justify-content: space-between;
+        height: 0;
+        font-weight: 400;
+        font-size: 0.8vw;
+        color: var(--gray-0);
+        
+        span{
+                font-weight: 400;
+                font-size: 0.8vw;
+                color: var(--negative);
+        }
 
-    @media(max-width: 950px) {
-        font-size: 1.6vw;
-    }
-    @media(max-width: 600px) {
-        font-size: 3vw;
-    }
+        @media(max-width: 950px) {
+                font-size:1.5vw;
+                span{
+                font-size:1.5vw;;
+        }
+        }
+        @media(max-width: 600px) {
+                font-size: 3vw;
+                span{
+                font-size: 3vw;;
+        }
+        }
 `
 export const DivButton = styled.div`
     display:flex;

@@ -1,5 +1,5 @@
 import { Section, Div, DivTop, Form, Title, ButtonExit, Input, Label, ButtonPink, Select } from "./style"
-import { formSchema } from "../../../validators/editModal";
+import { formSchema } from "../../../validators/registerModal";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { BsXLg } from "react-icons/bs";
@@ -30,8 +30,9 @@ function ModalRegister() {
             <Form onSubmit={handleSubmit(registerTech)}>
                 <Label htmlFor="text">Nome<span>{errors.title?.message}</span></Label>
                 <Input type="text" placeholder="Digite um nome" {...register("title")}/>
-                <Label htmlFor="text">Selecionar status<span>{errors.status?.message}</span></Label>
+                <Label htmlFor="text">Selecionar status<span> {errors.status?.message}</span></Label>
                 <Select {...register("status")}>
+                    <option></option>
                     <option>Iniciante</option>
                     <option>Intermediário</option>
                     <option>Avançado</option>
