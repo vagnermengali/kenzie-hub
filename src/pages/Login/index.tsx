@@ -1,4 +1,4 @@
-import { Section, Div, Form, Title, Input, Label, ButtonPink, Img,ButtonBlack,DivHeader } from "./style"
+import { Section, Div, Form, Title, Input, Label, ButtonPink,  Img,ButtonBlack,DivHeader } from "./style"
 import 'react-toastify/dist/ReactToastify.css';
 import { formSchema } from "../../validators/userLogin";
 import { useForm } from "react-hook-form";
@@ -8,16 +8,22 @@ import { motion } from "framer-motion"
 import { BsFillEyeFill, BsFillEyeSlashFill } from "react-icons/bs";
 import { useContext } from "react";
 import { Context } from "../../context/userContext";
-import "./style"
+import { useNavigate } from "react-router-dom";
+
+interface UserDataLogin {
+    email: string;
+    password: number;
+  }
 
 function Login() {
-    const { eyeClick, LoginUser, handleClick, navigate} = useContext(Context)
+    const { eyeClick, LoginUser, handleClick } = useContext(Context)
+    const navigate = useNavigate()
 
         const {
             register,
             handleSubmit,
             formState: { errors }
-            } = useForm({
+            } = useForm<UserDataLogin>({
             resolver: yupResolver(formSchema)
         });
     
@@ -28,12 +34,10 @@ function Login() {
         exit={{ opacity:0 }}
         transition={{ duration: 0.5}}
         >
-        <>
-        
         <Section>       
         <Div>
             <DivHeader>
-                <Img src={logo} alt=""/>
+                 <Img src={logo} alt=""/>
                 <ButtonBlack onClick={() => navigate("/")}>Voltar</ButtonBlack> 
             </DivHeader>
             <Form onSubmit={handleSubmit(LoginUser)}>
@@ -44,19 +48,18 @@ function Login() {
                 {eyeClick?(
                 <div>
                     <Input type="password" placeholder="Digite sua senha" {...register("password")}/>
-                    <button type="button"><BsFillEyeFill onClick={(e) => handleClick(e.preventDefault())}/></button>
+                    <button type="button"><BsFillEyeFill onClick={() => handleClick()}/></button>
                 </div> 
                 ):(                
                 <div>
                     <Input type="text" placeholder="Digite sua senha" {...register("password")}/>
-                    <button><BsFillEyeSlashFill onClick={(e) => handleClick(e.preventDefault())}/></button>
+                    <button type="button"><BsFillEyeSlashFill onClick={() => handleClick()}/></button>
                 </div> 
                 )}
                 <ButtonPink type="submit">Entrar</ButtonPink>
             </Form>
         </Div>
         </Section>
-        </>
         </motion.div>
 
     )

@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
-export const Section = styled.section`
+interface Props {
+    dropdown?: string;
+}
+
+export const Section = styled.section<Props>`
     position: fixed;
-    display: ${props => props.dropdown};
+    display: ${(props:Props) => props.dropdown};
     align-items: center;
     justify-content: center;
     width: 100%;

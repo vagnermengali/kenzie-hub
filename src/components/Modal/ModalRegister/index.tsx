@@ -7,14 +7,24 @@ import "./style"
 import { useContext } from "react";
 import { Context } from "../../../context/userContext";
 
+interface Techs {
+    title: string;
+    status: string;
+    id?: string;
+  }
+
 function ModalRegister() {
-    const { registerTech, closeDropdownRegister, dropDownRegister} = useContext(Context)
+    const { registerTech, dropDownRegister, setDropdownRegister} = useContext(Context)
+
+    const closeDropdownRegister = () => {
+        setDropdownRegister("none");
+    };
 
     const {
         register,
         handleSubmit,
         formState: { errors }
-        } = useForm({
+        } = useForm<Techs>({
         resolver: yupResolver(formSchema)
     });
 

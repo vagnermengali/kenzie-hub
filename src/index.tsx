@@ -5,17 +5,19 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom"
 import { GlobalStyles } from './style/global';
 import  { ResetCSS }  from './style/global';
-import Provider from './context/userContext';
+import ProviderUser from "./context/userContext";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(
+  document.getElementById('root') as HTMLElement
+);
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-    <Provider>
-      <GlobalStyles />
-      <ResetCSS />
-      <App />
-    </Provider>
+      <ProviderUser>
+        <GlobalStyles />
+        <ResetCSS />
+        <App />
+      </ProviderUser>
     </BrowserRouter>
   </React.StrictMode>
 );

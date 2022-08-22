@@ -1,13 +1,38 @@
 import { ContainerSection, Div, DivContentLeft, DivContentRigth, Img } from "./style"
+import loadingAnimatedTree from "../../assets/animation/lf20_4kpkaqsg (1).json"
+import loadingAnimatedFour from "../../assets/animation/lf20_ikh7wnhd.json"
 import logo from "../../assets/logo.svg"
-import { useContext } from "react";
 import Lottie from 'react-lottie';
-import { Context } from "../../context/userContext";
 import { motion } from "framer-motion"
+import { useNavigate } from "react-router-dom";
+import { useState } from "react"
 
 function Home() {
-    const { navigate, animateState, defaultOptionsTree, defaultOptionsFour } = useContext(Context)
+    const navigate = useNavigate()
     
+    const [animateState] = useState({
+        isStopped: false,
+        isPaused: false,
+    })
+
+    const defaultOptionsTree = {
+        loop: true,
+        autoplay: true, 
+        animationData: loadingAnimatedTree,
+        rendererSettings: {
+          preserveAspectRatio: 'xMidYMid slice'
+        }
+    };
+
+    const defaultOptionsFour = {
+        loop: true,
+        autoplay: true, 
+        animationData: loadingAnimatedFour,
+        rendererSettings: {
+          preserveAspectRatio: 'xMidYMid slice'
+        }
+    };
+
     return (
         <motion.div 
         initial={{opacity:0}}
@@ -15,7 +40,6 @@ function Home() {
         exit={{ opacity:0 }}
         transition={{ duration: 0.5}}
         >
-        <>
         <ContainerSection>
             <Div>
                 <DivContentLeft>
@@ -40,7 +64,6 @@ function Home() {
                 </DivContentRigth>
             </Div>
         </ContainerSection>
-        </>
         </motion.div>
     )
 }

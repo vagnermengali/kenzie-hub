@@ -3,14 +3,16 @@ import logo from "../../assets/logo.svg"
 import "./style"
 import { useContext } from "react"
 import { Context } from "../../context/userContext"
+import { useNavigate } from "react-router-dom";
 
 function Header() {
-    const { navigate, user} = useContext(Context)
+    const { user } = useContext(Context)
+    const navigate = useNavigate()
     
         return (
             <HeaderContainer>
                 <Nav>
-                    <Img src={logo} alt="logo"/>
+                     <Img src={logo} alt=""/>
                     <Button onClick={() => {
                         window.localStorage.clear()
                         navigate("/")

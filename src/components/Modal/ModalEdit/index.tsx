@@ -7,18 +7,26 @@ import "./style"
 import { useContext } from "react";
 import { Context } from "../../../context/userContext";
 
+interface TechUserEdit {
+    title: string;
+    status: string;
+    id?: string;
+}
+
 function ModalEdit() {
-    const { tech, editTech, dropDownEdit, closeDropdownEdit ,deleteTech} = useContext(Context)
+    const { tech, editTech, dropDownEdit, setDropdownEdit,deleteTech} = useContext(Context)
+
+    const closeDropdownEdit = () => {
+        setDropdownEdit("none");
+    };
+
         const {
             register,
             handleSubmit,
             formState: { errors }
-            } = useForm({
-            resolver: yupResolver(formSchema),
-            defaultValues: { status: tech?.status
-            }
+            } = useForm<TechUserEdit>({
+            resolver: yupResolver(formSchema)
         });
-        console.log(tech.status)
     return (
         
         <Section dropdown={dropDownEdit}>
@@ -29,7 +37,7 @@ function ModalEdit() {
             </DivTop>
             <Form>
                 <Label htmlFor="">Nome do projeto<span>{errors.title?.message}</span></Label>
-                <Input type="text" value={tech?.title} disabled />
+                <Input type="text" value={tech.title} disabled />
                 <Label htmlFor="">Status<span>{errors.status?.message}</span></Label>
                 <Select {...register("status")} >
                     <option></option>

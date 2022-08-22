@@ -5,7 +5,11 @@ import { useContext } from "react";
 import { Context } from "../../context/userContext";
 
 function List() {
-    const { showDropdownRegister } = useContext(Context)
+    const { setDropdownRegister } = useContext(Context)
+    const showDropdownRegister = () => {
+        setDropdownRegister("flex");
+    }
+    
     return (
         <Main>
             <DivContainer>
