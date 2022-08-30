@@ -60,6 +60,35 @@ interface TechUserReponse {
   updated_at: string;
 }
 
+interface LoginResponse {
+  user: {
+    id: string,
+    name: string,
+    email: string,
+    course_module: string,
+    bio: string,
+    contact: string,
+    created_at: string,
+    updated_at: string,
+    techs: [],
+    works: [],
+    avatar_url: null
+  },
+  token: string;
+}
+
+interface RegisterResponse {
+  id: string,
+  name: string,
+  email: string,
+  course_module: string,
+  bio: string,
+  contact: string,
+  created_at: string,
+  updated_at: string,
+  avatar_url: null
+}
+
 interface TechsResponse {
   id: string;
   name: string;
@@ -132,13 +161,8 @@ const ProviderUser = ({ children }: Children) => {
         headers: {Authorization: `Bearer ${token}`}
         })
         .then((res) => {
-          console.log(res)
-          console.log(res.data.techs)
             setListTech(res.data.techs)
             setLoading(false)
-        })
-        .catch((err) => {
-          console.log(err)
         });
         
 },[dropDownRegister, dropDownEdit, token])
@@ -147,7 +171,7 @@ const ProviderUser = ({ children }: Children) => {
   const notifyLoginError = (test: string) => toast.error(test);
 
   const LoginUser = (data: UserDataLogin) => {
-    Api.post("/sessions", data)
+    Api.post<LoginResponse>("/sessions", data)
       .then((res) => {
         if (res.status === 200) {
           notifyLoginSuccess("Logado com sucesso");
@@ -181,7 +205,7 @@ const ProviderUser = ({ children }: Children) => {
   };
 
   const registerUser = (data: UserDataRegister) => {
-    Api.post("/users", data)
+    Api.post<RegisterResponse>("/users", data)
       .then((res) =>
         res.status === 201
           ? notifyLoginSuccess("Usário criado") &&
@@ -204,7 +228,6 @@ const ProviderUser = ({ children }: Children) => {
       .catch((err) => {
         notifyLoginError("Tecnologia já criada!");
         setDropdownEdit("none");
-        console.log(err)
       });
   };
 
